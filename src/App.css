@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+
+}
+.loader {
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  padding: 0 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav .nav-wrapper ul li a {
+font-size: 25px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content {
+  min-height: calc(100vh - 70px - 64px);
+  padding: 1.5rem 0;
+}
+
+.goods {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap:1rem;
+}
+
+.card-action {
+  align-items: center;
+  display: flex;
+  justify-content:space-between;
+}
+
+.card{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.card-content{
+  flex-grow: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.page-footer {
+  padding: 0;
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.cart {
+  position: fixed;
+  bottom:2rem;
+  right: 2rem;
+  cursor: pointer;
+  z-index: 5;
+  padding: 1rem;
+}
+
+.secondary-content {
+  position: relative;
+  bottom:7px;
+}
+.btnq i {
+  margin: 0;
+}
+@media (min-width:0px) and (max-width:600px) {
+  .collect{
+    font-size: 13px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .secondary-content {
+    bottom: 9px;
+  }
+  
+  .btnq{
+   width: 30px;
+   text-align: center;
+   margin: 0;
+   padding:0 ;
   }
 }
+
+@media (min-width:767px) {
+  .cart {
+    top: 5rem;
+    bottom: unset;
+  }
+}
+
+
+
+@keyframes show {
+  from{top:70%;opacity: 0}
+  to{top:50%;opacity: 1}
+}
+
+.bsk{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+
+}
+
+.basket-list {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 50rem;
+  max-width: 95%;
+  box-shadow: 0 6px 15px 0 rgba(0,0,0, .5);
+  animation: show 0.5s ease-in-out  ;
+}
+
+.basket-close {
+  cursor: pointer;
+  position:absolute;
+  top: .5rem;
+  right: .5rem;
+  color: #fff;
+}
+
+.basket-delete{
+  cursor: pointer;
+};
+
